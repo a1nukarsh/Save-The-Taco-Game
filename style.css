@@ -38,33 +38,29 @@ body{
     left: 50vw;
 }
 
-.gameOver{
-    visibility: hidden;
-}
-
-.animateTaco{
-    animation: taco 0.6s linear;
-}
-
 .antani{
-    animation: antani 5s linear infinite;
+    animation: antani 2s linear infinite;
+}
+
+.taco-ani{
+    animation: taco 0.8s linear;
 }
 
 @keyframes taco{
     0%{
-        bottom: 0px;
+        bottom: 0;
     }
     50%{
-        bottom: 200px;
+        bottom: 444px;
     }
     100%{
-        bottom: 0px;
+        bottom: 0;
     }
 }
 
 @keyframes antani{
     0%{
-        left: 100vw;
+        left: 150vw; 
     }
     100%{
         left: -10vw;
