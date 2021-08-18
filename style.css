@@ -15,6 +15,9 @@ body{
     height: 100vh;
     
 }
+.gameOver{
+    visibility: hidden;
+}
 
 .taco{
     background-image: url(tacoclr.png);
@@ -38,8 +41,8 @@ body{
     left: 50vw;
 }
 
-.antani{
-    animation: antani 2s linear infinite;
+.ant-ani{
+    animation: ant-ani 2s linear infinite;
 }
 
 .taco-ani{
@@ -58,7 +61,7 @@ body{
     }
 }
 
-@keyframes antani{
+@keyframes ant-ani{
     0%{
         left: 150vw; 
     }

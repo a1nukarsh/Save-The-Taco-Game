@@ -7,6 +7,13 @@ document.onkeydown = function(e){
             taco.classList.remove('taco-ani')
         }, 1000);
     }
+    if (e.keyCode==39){
+        taco = document.querySelector('.taco')
+        taco.classList.add('taco-ani')
+        setTimeout(() => {
+            taco.classList.remove('taco-ani')
+        }, 1000);
+    }
 }
 
 setInterval(() => {
@@ -14,12 +21,19 @@ setInterval(() => {
     gameOver = document.querySelector('.gameOver')
     ant = document.querySelector('.ant')
 
-    tx = window.getComputedStyle(taco, null).getPropertyValue('left')
-    ty = window.getComputedStyle(taco, null).getPropertyValue('top')
+    tx = parseInt(window.getComputedStyle(taco, null).getPropertyValue('left'))
+    ty = parseInt(window.getComputedStyle(taco, null).getPropertyValue('top'))
     
-    ax = window.getComputedStyle(taco, null).getPropertyValue('left')
-    ay = window.getComputedStyle(taco, null).getPropertyValue('top')
+    ax = parseInt(window.getComputedStyle(ant, null).getPropertyValue('left'))
+    ay = parseInt(window.getComputedStyle(ant, null).getPropertyValue('top'))
 
     offsetX = Math.abs(tx-ax)
     offsetY = Math.abs(ty-ay)
+
+    console.log(offsetX, offsetY)
+
+    if (offsetX<100 && offsetY<85){
+        gameOver.style.visibility = 'visible';
+        ant.classList.remove('ant-ani')
+    }
 }, 100);
